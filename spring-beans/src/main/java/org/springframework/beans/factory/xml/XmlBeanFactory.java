@@ -68,7 +68,7 @@ import org.springframework.core.io.Resource;
 @SuppressWarnings({"serial", "all"})
 public class XmlBeanFactory extends DefaultListableBeanFactory {
 	/**
-	 * 资源文件的读取、解析、注册
+	 * 用于资源文件的读取、解析、注册
 	 */
 	private final XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(this);
 
@@ -76,14 +76,12 @@ public class XmlBeanFactory extends DefaultListableBeanFactory {
 	/**
 	 * Create a new XmlBeanFactory with the given resource,
 	 * which must be parsable using DOM.
+	 * 使用给定的资源文件创建一个新的XmlBeanFactory，
+	 * 必须可以使用DOM进行解析。
 	 * @param resource the XML resource to load bean definitions from
+	 *                 XML资源文件，从这里加载定义的bean
 	 * @throws BeansException in case of loading or parsing errors
-	 */
-	/**
-	 * 使用给定的输入流创建一个新的XmlBeanFactory，
-	 * 必须可以使用DOM进行解析（输入流）。
-	 * @param resource XML资源文件，从这里加载定义的bean
-	 * @throws BeansException 加载和解析异常处理
+	 * 						  加载和解析异常处理
 	 */
 	public XmlBeanFactory(Resource resource) throws BeansException {
 		this(resource, null);
@@ -92,16 +90,14 @@ public class XmlBeanFactory extends DefaultListableBeanFactory {
 	/**
 	 * Create a new XmlBeanFactory with the given input stream,
 	 * which must be parsable using DOM.
-	 * @param resource the XML resource to load bean definitions from
-	 * @param parentBeanFactory parent bean factory
-	 * @throws BeansException in case of loading or parsing errors
-	 */
-	/**
 	 * 使用给定的输入流创建一个新的XmlBeanFactory，
 	 * 必须可以使用DOM进行解析（输入流）。
-	 * @param resource XML资源文件，从这里加载定义的bean
-	 * @param parentBeanFactory 父bean工程
-	 * @throws BeansException 加载和解析异常处理
+	 * @param resource the XML resource to load bean definitions from
+	 *                 XML资源文件，从这里加载定义的bean
+	 * @param parentBeanFactory parent bean factory
+	 *                          父bean工厂
+	 * @throws BeansException in case of loading or parsing errors
+	 * 						  加载和解析异常处理
 	 */
 	public XmlBeanFactory(Resource resource, BeanFactory parentBeanFactory) throws BeansException {
 		super(parentBeanFactory);
